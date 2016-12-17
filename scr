@@ -1,0 +1,3 @@
+cars=(lada bnv opel camaro)
+ls  ${cars[*]}\n
+
