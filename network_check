@@ -1,0 +1,22 @@
+#!/usr/bin/env python3
+
+import os
+import sys
+
+option=str(input())
+
+def ip():
+  os.system('ip a')
+def route():
+  os.system('ip r')
+def  link():
+  os.system('ip link')
+
+if option == 'addr':
+   ip()
+elif option == 'route':
+   route()
+elif option == 'link':
+   link()
+else:
+    print('put correct option')
