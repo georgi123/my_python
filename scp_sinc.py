@@ -6,6 +6,7 @@ import os
 import sys
 
 ###variable
+
 option=str(input())
 
 ###function
