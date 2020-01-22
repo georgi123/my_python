@@ -20,7 +20,7 @@ def copy_ora():
    os.system('while read p; do scp /usr2/local/dimitrge/migration/sles11to12     root@$p:/root/scripts; done < /infra/linux/SUSE-Manager/ora_list')
    os.system('while read p; do scp /usr2/local/dimitrge/migration/unregister.pl     root@$p:/root/scripts; done < /infra/linux/SUSE-Manager/ora_list')
    os.system('while read p; do scp /usr2/local/dimitrge/migration/HPOA_12.06_Linux_64_v1.tar.gz      root@$p:/tmp ; done < /infra/linux/SUSE-Manager/ora_list')
-   os.system('while read p; do scp -r /usr2/local/dimitrge/migration/backup      root@$p:/tmp ; done < /infra/linux/SUSE-Manager/sap_list')
+   os.system('while read p; do scp -r /usr2/local/dimitrge/migration/backup      root@$p:/tmp ; done < /infra/linux/SUSE-Manager/ora_list')
 if option == 'help':
    print('use help for posible option')
    print('copy_sap files from suse-mgr to sap nodes')
@@ -32,3 +32,6 @@ elif option == 'copy_ora':
    copy_ora()
 else:
    print('USE CORRECT OPTION')
+   print('use help for posible option')
+   print('copy_sap files from suse-mgr to sap nodes')
+   print('copy_ora files from suse-mgr to ora nodes')
