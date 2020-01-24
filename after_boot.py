@@ -33,18 +33,17 @@ os.system('pwconv')
 
 
 ######apx agent install task######
+if os.path.exists("/opt/apxpccp/"):
+   os.system('tar -xvf  /opt/apxpccp/apxpccp_lin64_create_pks_after_move.tar')
+   os.system('/opt/apxpccp/./recreate_pccp_pks_after_move.sh')
+   os.system('/opt/apxpccp/./apxcntl restart')
 
-cd  /opt/apxpccp/
-tar -xvf  apxpccp_lin64_create_pks_after_move.tar
-./recreate_pccp_pks_after_move.sh
-./apxcntl restart
-check >> $LOGFILE
 ####install DP agent####
 if os.path.exists("rpm -Uvh /mnt/tmp/backup/omni_packages/"):
 
     os.system('rpm -Uvh /mnt/tmp/backup/omni_packages/*.rpm')
 
 ####post checkes######
-if os.path.exists("/root/scripts/migration/post_migration_checks):
+if os.path.exists("/root/scripts/migration/post_migration_checks"):
                   
      os.system('/root/scripts/migration/./post_migration_checks')
