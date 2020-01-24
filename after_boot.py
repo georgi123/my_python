@@ -10,6 +10,7 @@ import sys
 import time
 
 #######vars#####
+OLD_VG=str(input("Provide OLD VG name: "))
 CONF='etc'
 OLDSLES='mnt'
 LOG='set_configuration.log'
@@ -19,10 +20,10 @@ OPSPACKAGE='./opsware-agent-60.0.71639.1-linux-SLES-12-X86_64'
 #TIME=$(date +"%T:%m-%d-%y")
 
 ##set mountpoint from old sles11 server
-os.system('mount /dev/$1/root /OLDSLES/')
-os.system('mount /dev/$1/opt /OLDSLES/opt/')
-os.system('mount /dev/$1/tmp /$OLDSLES/tmp/')
-os.system('mount /dev/$1/home /$OLDSLES/usr2/local/')
+os.system('mount /dev/OLD_VG/root /OLDSLES/')
+os.system('mount /dev/OLD_VG/opt /OLDSLES/opt/')
+os.system('mount /dev/OLD_VG/tmp /OLDSLES/tmp/')
+os.system('mount /dev/OLD_VG/home /OLDSLES/usr2/local/')
 
 
 
@@ -45,4 +46,5 @@ if os.path.exists("rpm -Uvh /mnt/tmp/backup/omni_packages/"):
 
 ####post checkes######
 if os.path.exists("/root/scripts/migration/post_migration_checks):
+                  
      os.system('/root/scripts/migration/./post_migration_checks')
