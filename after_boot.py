@@ -39,9 +39,10 @@ tar -xvf  apxpccp_lin64_create_pks_after_move.tar
 ./apxcntl restart
 check >> $LOGFILE
 ####install DP agent####
+if os.path.exists("rpm -Uvh /mnt/tmp/backup/omni_packages/"):
 
-os.system('rpm -Uvh /mnt/tmp/backup/omni_packages/*.rpm')
+    os.system('rpm -Uvh /mnt/tmp/backup/omni_packages/*.rpm')
 
 ####post checkes######
-
-os.system('/root/scripts/migration/./post_migration_checks')
+if os.path.exists("/root/scripts/migration/post_migration_checks):
+     os.system('/root/scripts/migration/./post_migration_checks')
