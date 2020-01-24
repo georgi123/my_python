@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #Created by GD
 #####use the script when have to revert from sles12 to sles11#######
-impoer os
+import os
 ##unregister server from APX#####
 if os.path.exists("/opt/apxpccp/pccprel") || os.path.exists("/opt/apxpccc/pccCrel"):
     os.system('/opt/apxpccp/pccprel exec,DCM/DCM_DEREG_$(hostname).scp')
